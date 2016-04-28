@@ -1,25 +1,25 @@
-class S3Upload
-   Bucket = "app-uploads".freeze
+# class S3Upload
+#   Bucket = "app-uploads".freeze
   
-    def initialize file 
-       @file = file
-       @s3 = AWS::S3.new
-       @bucket = @s3.buckets[BUCKET]
-    end
+#     def initialize file 
+#       @file = file
+#       @s3 = AWS::S3.new
+#       @bucket = @s3.buckets[BUCKET]
+#     end
     
-    def store
-        @obj = @bucket.objects[filename].write(@file.tempfile, acl: :public_read)
-        self
-    end
+#     def store
+#         @obj = @bucket.objects[filename].write(@file.tempfile, acl: :public_read)
+#         self
+#     end
     
-    def url
-        @obj.public_url.to_s
-    end
+#     def url
+#         @obj.public_url.to_s
+#     end
     
-    private
+#     private
     
-    def filename
-        @filename ||= @file.original_filename.gsub(/[^a-zA-Z0-9_\.]/, '_')
-    end
+#     def filename
+#         @filename ||= @file.original_filename.gsub(/[^a-zA-Z0-9_\.]/, '_')
+#     end
     
-end
+# end

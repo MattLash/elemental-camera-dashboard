@@ -6,7 +6,7 @@ gem 'rails', '4.2.5'
 
 gem 'bootstrap-sass'
 gem 'haml-rails'
-gem 'aws-sdk'
+gem 'aws-sdk-v1'
 gem 'figaro'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
