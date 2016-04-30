@@ -5,3 +5,14 @@
   
     = submit_tag 'Snapshot', class: "btn btn-lg btn-warning"
     
+  - S3_BUCKET.objects.each do |object|
+    
+    = object.key
+    %br
+    = image_tag("https://matt-photo-app.s3.amazonaws.com/#{object.key}")
+    
+    
+    // = object.read
+    // https://<bucket-name>.s3.amazonaws.com/<key>
+    // https://matt-photo-app.s3.amazonaws.com/image-2016-04-08 18:02:43.319729.jpg
+  // = image_tag("https://matt-photo-app.s3.amazonaws.com/image-2016-04-08 18:02:43.319729.jpg")
